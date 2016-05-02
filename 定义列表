@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>建立定义列表</title>
+</head>
+<body>
+	<dl>
+	<dt>HTML</dt>
+	<dd>文本标记语言，用于显示文档内容</dd>
+	<dt>Javascript</dt>
+	<dd>脚本语言，用于提高应用程序的交互性</dd>
+	<dd>类似Java语言的一种语言</dd>
+	</dl>
+	<dl>
+	<dt>Jsp</dt>
+	<dd>动态页面交互</dd>
+	</dl>
+</body>
+</html>
