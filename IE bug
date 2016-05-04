@@ -1,0 +1,9 @@
+IE 常见bug及解决方案
+
+盒模型 bug   使用严格doctype声明
+
+双倍margin bug（左浮元素，左margin是定义的2倍 右浮元素，右margin是定义的2倍 ）   _display:inline;
+
+不认识a:link     不加:link
+ 
+3像素margin bug   规范浮动与清除浮动
