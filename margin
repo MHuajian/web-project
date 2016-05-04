@@ -1,0 +1,22 @@
+
+<style>
+        #father{
+                width: 100px;
+                height: 100px;
+                background: blue;
+                margin-top: 50px;
+        }
+
+        #son{
+                width: 50px;
+                height: 50px;
+                background: green;
+                margin-top: 100px;
+        }
+</style>
+</head>
+    <body>
+            <div id = "father">
+                    <div id = "son"></div>
+            </div>
+    </body>
