@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>nextSibling</title>
+</head>
+<body>
+<ul id="u1">   
+            <li id="a">javascript</li>   
+            <li id="b">jquery</li>   
+            <li id="c">html</li>   
+        </ul>   
+        <ul id="u2">   
+            <li id="d">css3</li>   
+            <li id="e">php</li>   
+            <li id="f">java</li>   
+        </ul>   
+<script type="text/javascript">
+  //访问上一个兄弟节点且为 元素节点
+ function get_previousSibling(n){
+        var x=n.previousSibling;
+        while (x && x.nodeType!=1){
+            x=x.previousSibling;
+        }
+        return x;
+    }
+    //访问下一个兄弟节点且为 元素节点
+    function get_nextSibling(n){
+        var x=n.nextSibling;
+    //判断 x是否存在 且 为元素节点
+        while (x && x.nodeType!=1){
+            x=x.nextSibling;
+        }
+        return x;
+    }
+
+    var x=document.getElementsByTagName("li")[1];
+    document.write(x.nodeName);
+    document.write(" = ");
+    document.write(x.innerHTML);
+    
+    var y=get_previousSibling(x);
+    var z=get_nextSibling(x);
+    if(y!=null){
+        document.write("<br />previousSibling: ");
+        document.write(y.nodeName);
+        document.write(" = ");
+        document.write(y.innerHTML);
+    }else{
+      document.write("<br>已经是最后一个节点");      
+    }
+    if(z!=null){
+        document.write("<br />nextsibling: ");
+        document.write(z.nodeName);
+        document.write(" = ");
+        document.write(z.innerHTML);
+    }else{
+      document.write("<br>已经是最后一个节点");      
+    }
+
+</script>
+</body>
+</html>
