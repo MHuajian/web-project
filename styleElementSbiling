@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+     abbr{
+     	text-decoration: none;
+     	font-style: normal;
+     }
+     body{
+     	font-family: "Helvetica","Arial",sans-serif;
+     }
+   .intro{
+     	font-size: 12px;
+     	color:blue;
+     }
+	</style>
+</head>
+<body>
+    <ul>
+    	<li><a href="index.html" accesskey="1">Home</a></li>
+    	<li><a href="search.html" accesskey="4">Search</a></li>
+    	<li><a href="contact.html" accesskey="9">Contact</a></li>
+    </ul>
+ 
+	   <h1>What is the Document object Model?</h1>
+	   <p>
+		The<abbr title="World Wide Web Consortium">W3C</abbr> defines
+		the<abbr title="Document Object Model">DOM</abbr>as:
+	   </p>
+	   <blockquote cite="http://www.w3.org/DOM">
+	   	<p>
+	   	A platform - and language-neutral interface that will allow programs and scipts to dynamically access and update the content, structure and style of documents.
+	   	</p>
+	   </blockquote>
+	   <p>
+	   	It is an <abbr title="Application Programming Interface">API</abbr>
+	   	that can be used to navigate <abbr title="HypeText Markup Language">HTML</abbr>and <abbr title="eXtensible Marup Language">XML</abbr> documents.
+	   	</p>
+	   	<script type="text/javascript">
+//得到下一个元素节点
+function getNextElement(node) {
+	if(node.nodeType==1){
+		return node;
+ 	}
+ 	if(node.nextSibling){
+        return getNextElement(node.nextSibling)
+ 	}
+	return null;
+}
+
+//添加className属性
+
+function addClass(element,value) {
+//如果元素没有className属性的值 则把新的class值赋值给className属性
+	if(!element.className){
+        element.className=value;
+//如果不是，把一个空格和新的class设置值追加到ClassName属性上
+	}else{
+		newelement=element.className;
+		newelement+=" ";
+        newelement+=value;
+        element.className=newelement;
+	}
+}
+
+//找出一个元素给其下一个兄弟元素节点设置样式
+function styleElementSiblings(tag,theclass) {
+	var eles=document.getElementsByTagName(tag)
+	for(var i=0;i<eles.length;i++)
+	{
+		var eles_next=getNextElement(eles[i].nextSibling);
+		addClass(eles_next,theclass);
+	}
+}
+window.onload=function(){
+	styleElementSiblings('h1','intro');
+}
+</script>
+</body>
+</html>
