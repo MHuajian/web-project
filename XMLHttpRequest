@@ -1,0 +1,15 @@
+//跨浏览器解决 XMLHttpRequest 对象 （Ajax）
+function getHTTPObject() {
+	//如果是微软
+	if(window.ActiveXObject){
+	  //创建一个新“中转站”  即XMLHTTP的实例
+		var waystation=new ActiveXObject("Microsoft.XMLHTTP")
+	//如果是其他浏览器
+	}else if(window.XMLHttpRequest){
+	   //为其他浏览器创建一个新“中转站” 使用 XMLHttpRequest 对象
+		var waystation=new XMLHttpRequest();
+	}else{
+		var waystation=false;
+	}
+	return waystation;
+}
