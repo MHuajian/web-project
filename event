@@ -1,0 +1,50 @@
+ var eventUtil={
+ 	    //添加句柄
+		 	addHandler:function(ele,type,handle){
+		 		if(ele.addEventListener){
+                           ele.addEventListener(type,handle,false);
+		 		}else if (ele.attachEvent) {
+                             ele.attachEvent("on"+type,handle)
+		 		}else{ 
+		 			ele["on"+type]=handle;
+
+		 		}
+
+		 	},
+		 //删除句柄
+		 	removeHandler:function(ele,type,handle){
+		 		if(ele.removeEventListener){
+                           ele.removeEventListener(type,handle,false);
+		 		}else if (ele.detachEvent) {
+                             ele.detachEvent("on"+type,handle)
+		 		}else{ 
+		 			ele["on"+type]=null;
+
+		 		}
+
+		 	},
+		 	getEvent:function(ele){
+		 		return ele?ele:window.event;
+		 	},
+		 	getType:function(ele){
+		 	return ele.type;
+		 	},
+		 	getElement:function (ele) {
+		 		return ele.target||ele.srcElement;	
+		 	},
+		 	stopPropagation:function(ele){
+		 		if(ele.stopPropagation){
+		 			ele.stopPropagation();
+		 		}
+		 	      else{
+		 	ele.cancelBubble=true; 
+		 }
+		},
+		 preventDefault:function (ele) {
+		 	if(ele.preventDefault){
+		 		ele.preventDefault();
+		 	}else{
+		 		ele.returnValue=false;
+		 	}
+		 }
+		 }
