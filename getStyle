@@ -1,4 +1,4 @@
-    	//获取行内样式函数
+    	// 获取行内样式函数
     	function getStyle(obj,attr){
     		if(obj.currentStyle){
     			return obj.currentStyle[attr];//ie
