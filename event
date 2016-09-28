@@ -1,5 +1,5 @@
  var eventUtil={
- 	    //添加句柄
+ 	    // 添加句柄
 		 	addHandler:function(ele,type,handle){
 		 		if(ele.addEventListener){
                            ele.addEventListener(type,handle,false);
